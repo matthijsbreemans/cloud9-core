@@ -32,7 +32,7 @@ function main(options, imports, register) {
     
     var resolveModulePath = require("architect-build/module-deps").resolveModulePath;
     connectStatic.getRequireJsConfig().useCache = options.useBrowserCache;
-    section.post("/__check__", [function(req, res, next) {
+    section.post("/cloud9/__check__", [function(req, res, next) {
         req.params.hash = "any";
         next();
     }, prepare, function(req, res, next) {

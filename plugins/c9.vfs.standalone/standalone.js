@@ -47,12 +47,12 @@ function plugin(options, imports, register) {
     var api = frontdoor();
     imports.connect.use(api);
     
-    api.get("/", function(req, res, next) {
+    api.get("/cloud9/", function(req, res, next) {
         res.writeHead(302, { "Location": options.sdk ? "/ide.html" : "/static/places.html" });
         res.end();
     });
     
-    api.get("/ide.html", {
+    api.get("/cloud9/ide.html", {
         params: {
             workspacetype: {
                 source: "query",
